@@ -3,50 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kristori <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 14:38:19 by kristori          #+#    #+#             */
-/*   Updated: 2022/12/06 15:35:51 by kristori         ###   ########.fr       */
+/*   Created: 2022/12/19 15:18:05 by kristori          #+#    #+#             */
+/*   Updated: 2022/12/19 16:15:08 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rra(int *stack_a)
+void	ft_rra(t_stack **stack_a)
 {
 	int	tmp;
-	int	i;
 
-	tmp = stack_a[ft_array_lenght(stack_a) - 1];
-	i = ft_array_lenght(stack_a) - 1;
-	while (i > 0)
-	{
-		stack_a[i] = stack_a[i - 1];
-		i--;
-	}
-	stack_a[0] = tmp;
+	tmp = ft_get_last_item(*stack_a);
+	ft_remove_last_node(stack_a);
+	ft_add_first(stack_a, tmp);
 	write(1, "rra\n", 4);
 }
 
-void	ft_rrb(int *stack_b)
+void	ft_rrb(t_stack **stack_b)
 {
 	int	tmp;
-	int	i;
 
-	tmp = stack_b[ft_array_lenght(stack_b) - 1];
-	i = ft_array_lenght(stack_b) - 1;
-	while (i > 0)
-	{
-		stack_b[i] = stack_b[i - 1];
-		i--;
-	}
-	stack_b[0] = tmp;
-	write(1, "rra\n", 4);
-}
-
-void	ft_rrr(int *stack_a, int *stack_b)
-{
-	ft_rra(stack_a);
-	ft_rrb(stack_b);
-	write(1, "rrr\n", 4);
+	tmp = ft_get_last_item(*stack_b);
+	ft_remove_last_node(stack_b);
+	ft_add_first(stack_b, tmp);
+	write(1, "rrb\n", 4);
 }

@@ -1,9 +1,9 @@
 NAME = push_swap
-SRC = push_swap.c swap.c push.c rotate.c reverse_rotate.c utils.c case.c
+SRC = push_swap.c utils.c swap.c rotate.c reverse_rotate.c push.c check.c sort.c sort_big_stack.c sort_3_n_stack.c sort_5_n_stack.c
 OBJ = $(SRC:.c=.o)
 
 LIBFT = @libft/Makefile
-FLAGS = -Wall -Wextra -Werror
+# FLAGS = -Wall -Wextra -Werror
 LIB = libft/libft.a
 NONE='\033[0m'
 GREEN='\033[32m'
@@ -21,7 +21,7 @@ $(NAME): $(OBJ)
 
 $(LIBFT):
 	@echo $(CURSIVE)$(GRAY) "     - Compiling Libft ..."
-	@make -s -C libft
+	@make all -s -C libft
 	@echo $(GREEN)"- Libft ready -"
 
 $(OBJ): $(SRC)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kristori <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 12:28:13 by kristori          #+#    #+#             */
-/*   Updated: 2022/12/07 11:05:54 by kristori         ###   ########.fr       */
+/*   Created: 2022/12/17 14:34:49 by kristori          #+#    #+#             */
+/*   Updated: 2022/12/21 11:32:55 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,50 @@
 # include <unistd.h>
 # include <stdio.h>
 
-int		*ft_init_stack_a(int argc, char **argv);
-int		*ft_init_stack_b(int argc);
-int		ft_array_lenght(int *stack);
-void	ft_write_stack(int *stack_a, int *stack_b);
-void	ft_pa(int* stack_a, int *stack_b);
-void	ft_pb(int* stack_a, int *stack_b);
-void	ft_sa(int *stack_a);
-void	ft_sb(int *stack_b);
-void	ft_ss(int *stack_a, int *stack_b);
-void	ft_ra(int *stack_a);
-void	ft_rb(int *stack_b);
-void	ft_rr(int *stack_a, int *stack_b);
-void	ft_rra(int *stack_a);
-void	ft_rrb(int *stack_b);
-void	ft_rrr(int *stack_a, int *stack_b);
+typedef struct s_stack
+{
+	int				data;
+	struct s_stack	*next;
+}			t_stack;
 
-void	ft_case_3_n(int *stack_a);
-void	ft_case_5_n(int *stack_a, int *stack_b);
+void	ft_init_stack(t_stack **stack, char **argv, int n);
+
+void	ft_add_first(t_stack **head, int newData);
+void	ft_add_last(t_stack **head, int newData);
+
+void	ft_print_stack(t_stack *stack_a, t_stack *stack_b);
+
+void	ft_remove_first_node(t_stack **head);
+void	ft_remove_last_node(t_stack **head);
+int		ft_get_last_item(t_stack *head);
+
+int		ft_stack_len(t_stack *head);
+int		ft_get_index_val(t_stack *head, int index);
+
+void	ft_swap(int *a, int *b);
+void	ft_sa(t_stack **stack_a);
+void	ft_sb(t_stack **stack_b);
+
+void	ft_ra(t_stack **stack_a);
+void	ft_rb(t_stack **stack_b);
+void	ft_rr(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_rra(t_stack **stack_a);
+void	ft_rrb(t_stack **stack_b);
+
+void	ft_pa(t_stack **stack_a, t_stack **stack_b);
+void	ft_pb(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_sort_3_n_stack(t_stack **stack_a);
+
+int		ft_check_duplicate(t_stack *head);
+void	ft_sort_stack(t_stack *head);
+
+void	ft_order_stack(t_stack *input, t_stack *sort);
+
+void	ft_sort_big_stack(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_reorder_stack(t_stack *stack_a, t_stack *sort);
+int		ft_is_sorted(t_stack *head);
 
 #endif

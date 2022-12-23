@@ -3,38 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kristori <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 12:30:08 by kristori          #+#    #+#             */
-/*   Updated: 2022/12/06 14:27:22 by kristori         ###   ########.fr       */
+/*   Created: 2022/12/19 13:11:39 by kristori          #+#    #+#             */
+/*   Updated: 2022/12/19 16:23:31 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sa(int *stack_a)
+void	ft_sa(t_stack **stack_a)
 {
-	int	tmp;
+	t_stack	*tmp;
 
-	tmp = stack_a[0];
-	stack_a[0] = stack_a[1];
-	stack_a[1] = tmp;
+	tmp = *stack_a;
+	ft_swap(&tmp->data, &tmp->next->data);
+	tmp = tmp->next->next;
 	write(1, "sa\n", 3);
 }
 
-void	ft_sb(int *stack_b)
+void	ft_sb(t_stack **stack_b)
 {
-	int	tmp;
+	t_stack	*tmp;
 
-	tmp = stack_b[0];
-	stack_b[0] = stack_b[1];
-	stack_b[1] = tmp;
+	tmp = *stack_b;
+	ft_swap(&tmp->data, &tmp->next->data);
+	tmp = tmp->next->next;
 	write(1, "sb\n", 3);
 }
 
-void	ft_ss(int *stack_a, int *stack_b)
+void	ft_swap(int *a, int *b)
 {
-	ft_sa(stack_a);
-	ft_sb(stack_b);
-	write(1, "ss\n", 3);
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
