@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 17:13:30 by kristori          #+#    #+#             */
-/*   Updated: 2022/12/21 11:32:51 by kristori         ###   ########.fr       */
+/*   Updated: 2022/12/23 15:59:45 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ void	ft_sort_stack(t_stack *head)
 {
 	t_stack	*ptr1;
 	t_stack	*lptr;
-	int swapped;
+	int		swapped;
 
 	lptr = NULL;
 	if (head == NULL)
 		return ;
-
 	swapped = 1;
 	while (swapped)
 	{
@@ -42,8 +41,8 @@ void	ft_sort_stack(t_stack *head)
 
 void	ft_order_stack(t_stack *input, t_stack *sort)
 {
-	t_stack *tmp;
-	int	k;
+	t_stack	*tmp;
+	int		k;
 
 	tmp = sort;
 	k = 0;
@@ -54,7 +53,7 @@ void	ft_order_stack(t_stack *input, t_stack *sort)
 			if (input->data == sort->data)
 			{
 				input->data = k;
-				break;
+				break ;
 			}
 			k++;
 			sort = sort->next;

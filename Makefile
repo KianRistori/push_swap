@@ -1,5 +1,6 @@
 NAME = push_swap
-SRC = push_swap.c utils.c swap.c rotate.c reverse_rotate.c push.c check.c sort.c sort_big_stack.c sort_3_n_stack.c sort_5_n_stack.c
+SRC = push_swap.c utils.c swap.c rotate.c reverse_rotate.c push.c check.c \
+		sort.c sort_big_stack.c sort_3_n_stack.c sort_5_n_stack.c free.c sort_2_n_stack.c
 OBJ = $(SRC:.c=.o)
 
 LIBFT = @libft/Makefile

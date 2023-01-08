@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:24:06 by kristori          #+#    #+#             */
-/*   Updated: 2022/12/21 11:31:20 by kristori         ###   ########.fr       */
+/*   Updated: 2022/12/23 15:58:47 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_sort_big_stack(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-int		ft_is_sorted(t_stack *head)
+int	ft_is_sorted(t_stack *head)
 {
 	t_stack	*t;
 

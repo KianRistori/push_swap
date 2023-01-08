@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:37:15 by kristori          #+#    #+#             */
-/*   Updated: 2022/12/21 11:33:18 by kristori         ###   ########.fr       */
+/*   Updated: 2022/12/25 16:05:04 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,22 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	sort = NULL;
+	if (ft_check(argv, n) == 1)
+		return (1);
 	ft_init_stack(&stack_a, argv, n);
 	ft_init_stack(&sort, argv, n);
 	ft_sort_stack(sort);
 	ft_order_stack(stack_a, sort);
-	if (ft_stack_len(stack_a) == 3)
+	else if (ft_stack_len(stack_a) == 3)
 	{
-		if (!ft_is_sorted(stack_a))
+		if (ft_is_sorted(stack_a))
 			ft_sort_3_n_stack(&stack_a);
 	}
-	ft_sort_big_stack(&stack_a, &stack_b);
+	else
+		ft_sort_big_stack(&stack_a, &stack_b);
+	ft_free_stack(stack_a);
+	ft_free_stack(sort);
+	// return (0);
 	// ft_reorder_stack(stack_a, sort);
 	// ft_print_stack(stack_a, stack_b);
 }

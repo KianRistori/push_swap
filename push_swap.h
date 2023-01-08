@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:34:49 by kristori          #+#    #+#             */
-/*   Updated: 2022/12/21 11:32:55 by kristori         ###   ########.fr       */
+/*   Updated: 2022/12/24 13:15:12 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,12 @@ void	ft_pa(t_stack **stack_a, t_stack **stack_b);
 void	ft_pb(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_sort_3_n_stack(t_stack **stack_a);
+int		ft_check(char **argv, int n);
+int		ft_check_int(char **argv, int n);
+int		ft_check_non_numeric(char **argv, int n);
 
-int		ft_check_duplicate(t_stack *head);
+int		ft_strcmp(const char *X, const char *Y);
+
 void	ft_sort_stack(t_stack *head);
 
 void	ft_order_stack(t_stack *input, t_stack *sort);
@@ -62,5 +66,7 @@ void	ft_sort_big_stack(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_reorder_stack(t_stack *stack_a, t_stack *sort);
 int		ft_is_sorted(t_stack *head);
+
+void	ft_free_stack(t_stack *head);
 
 #endif
