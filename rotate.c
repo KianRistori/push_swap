@@ -34,7 +34,13 @@ void	ft_rb(t_stack **stack_b)
 
 void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_ra(stack_a);
-	ft_rb(stack_b);
+	int	tmp;
+
+	tmp = stack_a[0]->data;
+	ft_remove_first_node(stack_a);
+	ft_add_last(stack_a, tmp);
+	tmp = stack_b[0]->data;
+	ft_remove_first_node(stack_b);
+	ft_add_last(stack_b, tmp);
 	write(1, "rr\n", 3);
 }

@@ -31,3 +31,16 @@ void	ft_rrb(t_stack **stack_b)
 	ft_add_first(stack_b, tmp);
 	write(1, "rrb\n", 4);
 }
+
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	int	tmp;
+
+	tmp = ft_get_last_item(*stack_a);
+	ft_remove_last_node(stack_a);
+	ft_add_first(stack_a, tmp);
+	tmp = ft_get_last_item(*stack_b);
+	ft_remove_last_node(stack_b);
+	ft_add_first(stack_b, tmp);
+	write(1, "rrr\n", 4);
+}

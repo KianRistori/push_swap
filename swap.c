@@ -32,6 +32,19 @@ void	ft_sb(t_stack **stack_b)
 	write(1, "sb\n", 3);
 }
 
+void	ft_ss(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp;
+
+	tmp = *stack_a;
+	ft_swap(&tmp->data, &tmp->next->data);
+	tmp = tmp->next->next;
+	tmp = *stack_b;
+	ft_swap(&tmp->data, &tmp->next->data);
+	tmp = tmp->next->next;
+	write(1, "ss\n", 3);
+}
+
 void	ft_swap(int *a, int *b)
 {
 	int	tmp;

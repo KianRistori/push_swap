@@ -26,21 +26,27 @@ int	main(int argc, char **argv)
 	if (ft_check(argv, n) == 1)
 		return (1);
 	ft_init_stack(&stack_a, argv, n);
-	ft_init_stack(&sort, argv, n);
-	ft_sort_stack(sort);
-	ft_order_stack(stack_a, sort);
-	else if (ft_stack_len(stack_a) == 3)
+	if (ft_is_sorted(stack_a) != 0)
 	{
-		if (ft_is_sorted(stack_a))
+		if (ft_stack_len(stack_a) == 2)
+			ft_sort_2_n_stack(&stack_a);
+		else if (ft_stack_len(stack_a) == 3)
 			ft_sort_3_n_stack(&stack_a);
+		else if (ft_stack_len(stack_a) == 5)
+			ft_sort_5_n(&stack_a, &stack_b);
+		else
+		{
+			ft_init_stack(&sort, argv, n);
+			ft_sort_stack(sort);
+			ft_order_stack(stack_a, sort);
+			ft_sort_big_stack(&stack_a, &stack_b);
+		}
 	}
-	else
-		ft_sort_big_stack(&stack_a, &stack_b);
+	// ft_print_stack(stack_a, stack_b);
 	ft_free_stack(stack_a);
 	ft_free_stack(sort);
 	// return (0);
 	// ft_reorder_stack(stack_a, sort);
-	// ft_print_stack(stack_a, stack_b);
 }
 
 void	ft_init_stack(t_stack **stack, char **argv, int n)

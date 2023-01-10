@@ -4,7 +4,7 @@ SRC = push_swap.c utils.c swap.c rotate.c reverse_rotate.c push.c check.c \
 OBJ = $(SRC:.c=.o)
 
 LIBFT = @libft/Makefile
-# FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 LIB = libft/libft.a
 NONE='\033[0m'
 GREEN='\033[32m'
