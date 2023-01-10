@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:26:39 by kristori          #+#    #+#             */
-/*   Updated: 2022/12/25 15:50:00 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:50:07 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,17 @@ int	ft_check_non_numeric(char **argv, int n)
 
 int	ft_str_compare(char *str1, char *str2)
 {
-	int ctr=0;
+	int	i;
 
-	while(str1[ctr] == str2[ctr])
+	i = 0;
+	while (str1[i] == str2[i])
 	{
-		if(str1[ctr]=='\0'||str2[ctr]=='\0')
+		if (str1[i] == '\0' || str2[i] == '\0')
 			break ;
-		ctr++;
+		i++;
 	}
-	if(str1[ctr] == '\0' && str2[ctr] =='\0')
+	if (str1[i] == '\0' && str2[i] == '\0')
 		return (0);
 	else
-		return (-1);
+		return (1);
 }

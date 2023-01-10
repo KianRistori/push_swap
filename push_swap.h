@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:34:49 by kristori          #+#    #+#             */
-/*   Updated: 2022/12/24 13:15:12 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:44:17 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "libft/libft.h"
 # include <unistd.h>
 # include <stdio.h>
+# include "get_next_line.h"
 
 typedef struct s_stack
 {
@@ -65,7 +66,6 @@ int		ft_check_int(char **argv, int n);
 int		ft_check_non_numeric(char **argv, int n);
 int		ft_check_duplicate(char **argv, int n);
 
-int		ft_strcmp(const char *X, const char *Y);
 int		ft_str_compare(char *str1, char *str2);
 
 void	ft_sort_stack(t_stack *head);
