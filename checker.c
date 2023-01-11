@@ -6,11 +6,12 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 14:13:07 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/10 16:10:04 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:01:07 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include <string.h>
 
 int	main(int argc, char **argv)
 {
@@ -29,7 +30,8 @@ int	main(int argc, char **argv)
 	while (move != NULL)
 	{
 		move = get_next_line(0);
-		ft_move(&stack_a, &stack_b, move);
+		if (move != NULL)
+			ft_move(&stack_a, &stack_b, move);
 	}
 	ft_check_checker(&stack_a, &stack_b);
 	ft_free_stack(stack_a);
@@ -37,28 +39,28 @@ int	main(int argc, char **argv)
 
 void	ft_move(t_stack **stack_a, t_stack **stack_b, char *move)
 {
-	if (ft_str_compare(move, "sa"))
-		ft_sa(stack_a);
-	else if (ft_str_compare(move, "sb"))
-		ft_sb(stack_b);
-	else if (ft_str_compare(move, "ss"))
-		ft_ss(stack_a, stack_b);
-	else if (ft_str_compare(move, "ra"))
-		ft_ra(stack_a);
-	else if (ft_str_compare(move, "rb"))
-		ft_rb(stack_b);
-	else if (ft_str_compare(move, "rr"))
-		ft_rr(stack_a, stack_b);
-	else if (ft_str_compare(move, "rra"))
-		ft_rra(stack_a);
-	else if (ft_str_compare(move, "rrb"))
-		ft_rrb(stack_b);
-	else if (ft_str_compare(move, "rrr"))
-		ft_rrr(stack_a, stack_b);
-	else if (ft_str_compare(move, "pa"))
-		ft_pa(stack_a, stack_b);
-	else if (ft_str_compare(move, "pb"))
-		ft_pa(stack_a, stack_b);
+	if (ft_str_compare(move, "sa\n") == 0)
+		ft_sa_checker(stack_a);
+	else if (ft_str_compare(move, "sb\n") == 0)
+		ft_sb_checker(stack_b);
+	else if (ft_str_compare(move, "ss\n") == 0)
+		ft_ss_checker(stack_a, stack_b);
+	else if (ft_str_compare(move, "ra\n") == 0)
+		ft_ra_checker(stack_a);
+	else if (ft_str_compare(move, "rb\n") == 0)
+		ft_rb_checker(stack_b);
+	else if (ft_str_compare(move, "rr\n") == 0)
+		ft_rr_checker(stack_a, stack_b);
+	else if (ft_str_compare(move, "rra\n") == 0)
+		ft_rra_checker(stack_a);
+	else if (ft_str_compare(move, "rrb\n") == 0)
+		ft_rrb_checker(stack_b);
+	else if (ft_str_compare(move, "rrr\n") == 0)
+		ft_rrr_checker(stack_a, stack_b);
+	else if (ft_str_compare(move, "pa\n") == 0)
+		ft_pa_checker(stack_a, stack_b);
+	else if (ft_str_compare(move, "pb\n") == 0)
+		ft_pb_checker(stack_a, stack_b);
 }
 
 void	ft_check_checker(t_stack **stack_a, t_stack **stack_b)

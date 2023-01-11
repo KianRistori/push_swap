@@ -10,7 +10,7 @@ OBJ = $(SRC:.c=.o)
 
 BONUS = checker.c utils.c swap.c rotate.c reverse_rotate.c push.c check.c \
 		sort.c sort_big_stack.c sort_3_n_stack.c sort_5_n_stack.c free.c sort_2_n_stack.c utils2.c \
-		get_next_line.c get_next_line_utils.c
+		get_next_line.c get_next_line_utils.c checker_push.c checker_reverse_rotate.c checker_rotate.c checker_swap.c
 
 OBJ_BONUS	= $(BONUS:.c=.o)
 

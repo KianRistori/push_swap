@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:34:49 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/10 15:44:17 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:09:09 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_pa(t_stack **stack_a, t_stack **stack_b);
 void	ft_pb(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_case(t_stack *stack_a, t_stack *stack_b, t_stack *sort);
 
 void	ft_sort_2_n_stack(t_stack **stack_a);
 
