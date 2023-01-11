@@ -36,6 +36,7 @@ $(LIBFT):
 	@make all -s -C libft
 	@echo $(GREEN)"- Libft ready -"
 
+
 $(OBJ): $(SRC)
 	@echo $(CURSIVE)$(GRAY) "     - Making object files..." $(NONE)
 	@gcc $(FLAGS) -c $(SRC)

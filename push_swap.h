@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:34:49 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/11 12:09:09 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:30:06 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "libft/libft.h"
 # include <unistd.h>
-# include <stdio.h>
 # include "get_next_line.h"
 
 typedef struct s_stack
@@ -28,8 +27,6 @@ void	ft_init_stack(t_stack **stack, char **argv, int n);
 
 void	ft_add_first(t_stack **head, int newData);
 void	ft_add_last(t_stack **head, int newData);
-
-void	ft_print_stack(t_stack *stack_a, t_stack *stack_b);
 
 void	ft_remove_first_node(t_stack **head);
 void	ft_remove_last_node(t_stack **head);

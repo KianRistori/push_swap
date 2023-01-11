@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 14:13:07 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/11 12:01:07 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:22:26 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(int argc, char **argv)
 	char	*move;
 	int		n;
 
+	if (argc <= 1)
+		return (1);
 	n = argc - 1;
 	stack_a = NULL;
 	stack_b = NULL;
@@ -35,6 +37,7 @@ int	main(int argc, char **argv)
 	}
 	ft_check_checker(&stack_a, &stack_b);
 	ft_free_stack(stack_a);
+	return (0);
 }
 
 void	ft_move(t_stack **stack_a, t_stack **stack_b, char *move)

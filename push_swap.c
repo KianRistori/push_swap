@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:37:15 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/11 12:09:03 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:30:16 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 	t_stack	*sort;
 	int		n;
 
+	if (argc <= 1)
+		return (1);
 	n = argc - 1;
 	stack_a = NULL;
 	stack_b = NULL;

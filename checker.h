@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 13:42:24 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/11 11:33:19 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:12:42 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CHECKER_H
 
 # include "push_swap.h"
-# include "get_next_line.h"
 
 void	ft_move(t_stack **stack_a, t_stack **stack_b, char *move);
 void	ft_check_checker(t_stack **stack_a, t_stack **stack_b);

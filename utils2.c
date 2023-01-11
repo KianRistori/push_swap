@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 14:45:21 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/10 14:45:59 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 12:29:22 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,23 +56,5 @@ void	ft_add_last(t_stack **head, int newData)
 			last_node = last_node->next;
 		}
 		last_node->next = new_node;
-	}
-}
-
-void	ft_print_stack(t_stack *stack_a, t_stack *stack_b)
-{
-	printf("\n");
-	printf("a\n");
-	while (stack_a != NULL)
-	{
-		printf("%d\n", stack_a->data);
-		stack_a = stack_a->next;
-	}
-	printf("\n");
-	printf("b\n");
-	while (stack_b != NULL)
-	{
-		printf("%d\n", stack_b->data);
-		stack_b = stack_b->next;
 	}
 }
