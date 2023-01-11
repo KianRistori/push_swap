@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:34:49 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/11 12:30:06 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:25:51 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft/libft.h"
 # include <unistd.h>
+# include <limits.h>
 # include "get_next_line.h"
 
 typedef struct s_stack

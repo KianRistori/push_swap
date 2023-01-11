@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 14:13:07 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/11 12:22:26 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:44:32 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	move = "";
-	if (ft_check(argv, n) == 1)
+	if (ft_check_error(argv, n) == 1)
 		return (1);
 	ft_init_stack(&stack_a, argv, n);
 	while (move != NULL)
@@ -72,4 +72,15 @@ void	ft_check_checker(t_stack **stack_a, t_stack **stack_b)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
+}
+
+int	ft_check_error(char **argv, int n)
+{
+	if (ft_check_duplicate(argv, n) == 1)
+		return (1);
+	if (ft_check_int(argv, n) == 1)
+		return (1);
+	if (ft_check_non_numeric(argv, n) == 1)
+		return (1);
+	return (0);
 }

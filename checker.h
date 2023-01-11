@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 13:42:24 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/11 12:12:42 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:44:40 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ void	ft_rr_checker(t_stack **stack_a, t_stack **stack_b);
 void	ft_rra_checker(t_stack **stack_a);
 void	ft_rrb_checker(t_stack **stack_b);
 void	ft_rrr_checker(t_stack **stack_a, t_stack **stack_b);
+
+int		ft_check_error(char **argv, int n);
 
 #endif

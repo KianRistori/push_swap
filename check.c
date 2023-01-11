@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 16:26:39 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/10 15:50:07 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/11 13:48:20 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ int	ft_check(char **argv, int n)
 {
 	if (ft_check_duplicate(argv, n) == 1)
 	{
-		write(1, "Error\nDuplicates number\n", 24);
+		write(2, "Error\n", 7);
 		return (1);
 	}
 	if (ft_check_int(argv, n) == 1)
 	{
-		write(1, "Error\nInt not valid\n", 21);
+		write(2, "Error\n", 7);
 		return (1);
 	}
 	if (ft_check_non_numeric(argv, n) == 1)
 	{
-		write(1, "Error\nNon numeric parameters\n", 30);
+		write(2, "Error\n", 7);
 		return (1);
 	}
 	return (0);
@@ -60,9 +60,9 @@ int	ft_check_int(char **argv, int n)
 	i = 1;
 	while (i <= n)
 	{
-		if (!ft_str_compare("2147483648", argv[i]))
+		if (ft_atoli(argv[i]) > INT_MAX)
 			return (1);
-		else if (!ft_str_compare("-2147483649", argv[i]))
+		else if (ft_atoli(argv[i]) < INT_MIN)
 			return (1);
 		i++;
 	}
