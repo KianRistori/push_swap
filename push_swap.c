@@ -6,7 +6,7 @@
 /*   By: kristori <kristori@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 14:37:15 by kristori          #+#    #+#             */
-/*   Updated: 2023/01/11 12:30:16 by kristori         ###   ########.fr       */
+/*   Updated: 2023/01/12 11:35:28 by kristori         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	main(int argc, char **argv)
 	ft_init_stack(&stack_a, argv, n);
 	ft_init_stack(&sort, argv, n);
 	ft_case(stack_a, stack_b, sort);
-	ft_free_stack(stack_a);
-	ft_free_stack(sort);
 	return (0);
 }
 
@@ -52,4 +50,6 @@ void	ft_case(t_stack *stack_a, t_stack *stack_b, t_stack *sort)
 			ft_sort_big_stack(&stack_a, &stack_b);
 		}
 	}
+	ft_free_stack(stack_a);
+	ft_free_stack(sort);
 }
